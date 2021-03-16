@@ -4,6 +4,31 @@
 
 第一是 `unsafe.Pointer` 可以让你的变量在不同的指针类型转来转去，也就是表示为任意可寻址的指针类型.第二是 `uintptr` 常用于与 `unsafe.Pointer` 打配合，用于做指针运算。
 
+
+
+## 接口
+
+> 在 Go 语言的语义上，只要某个类型实现了所定义的一组方法集，则就认为其就是同一种类型，是一个东西。大家常常称其为鸭子类型（Duck typing），因为其与鸭子类型类型的定义相对吻合。
+
+在`Golang`中`interface`包括两种数据结构：`iface`和`eface`
+
+* `runtime.eface`结构体：不包含任何方法的空接口，也称为empty interface
+* `runtime.iface`结构体：表示包含方法的接口
+
+```golang
+type efaces struct {
+    _type *_type
+    data unsafe.Pointer
+}
+
+type iface struct {
+    tab *itab
+    data unsafe.Pointer
+}
+```
+
+
+
 ## 面试题
 
 ```go
