@@ -56,6 +56,20 @@ type iface struct {
 3. `nil`的作用
 nil可以作用于`interface`、`function`、`pointer`、`map`、`slice`和`channel`的`空值`，不能使用于`string`等常规数据类型
 
-4.
+4.func main() {
+    
+    s1 := []int{1,2,3}
+    s2 := []int{4,5,6}
+    
+    s = append(s1,s2)
+    fmt.Println(s1)
+}
+---
+上述代码编译能通过吗？
+答：不能，因为在连接两个切片的时候，追加的切片需要“拍扁”即需要元素一个一个的传入,s1 = append(s1, s2...)
+
+new和make的区别：
+​ 二者都是内存的分配（堆上），但是make只用于slice、map以及channel的初始化（非零值）；而new用于类型的内存分配，并且内存置为零。所以在我们编写程序的时候，就可以根据自己的需要很好的选择了。
+​ make返回的还是这三个引用类型本身；而new返回的是指向类型的指针。
 ```
 
