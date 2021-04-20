@@ -82,6 +82,8 @@ left join 是left outer join的简写，它的全称是左外连接，是外连�
 
 ## MySQL的存储引擎--MyISAM和InnoDB的区别
 
+（最重要三点:1.事务2.行锁3.外键）
+
 1. InnoDB 支持事务，MyISAM 不支持事务。这是 MySQL 将默认存储引擎从 MyISAM 变成 InnoDB 的重要原因之一；
 
 2. InnoDB 支持外键，而 MyISAM 不支持。对一个包含外键的 InnoDB 表转为 MYISAM 会失败；
